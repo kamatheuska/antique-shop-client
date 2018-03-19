@@ -39,6 +39,14 @@ html * {
   background: #fff;
   box-shadow: 0px 0.4rem 0.8rem 0px rgba(0,0,0,0.2);
 }
+.container {
+  padding: 3rem 10rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  height: 100%;
+  width: 100%;
+}
 .btn {
   position: relative;
   background: none;

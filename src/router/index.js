@@ -5,6 +5,7 @@ import Shortcuts from '@/components/shortcuts'
 import StatusBar from '@/components/statusbar'
 import Modules from '@/components/modules'
 import News from '@/components/news'
+import Sell from '@/components/sell'
 import SelectProducts from '@/components/selectProducts'
 
 Vue.use(Router)
@@ -28,9 +29,15 @@ export default new Router({
     },
     {
       path: '/products/sell',
-      components: {
-        default: SelectProducts
-      }
+      component: Sell,
+      children: [
+        {
+          path: '',
+          components: {
+            selectProducts: SelectProducts
+          }
+        }
+      ]
     }
   ]
 })

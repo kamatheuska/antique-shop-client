@@ -44,15 +44,15 @@ export default {
   transition: background-color 0.3s ease;
 }
 .modules div:nth-child(1) {
-  border-color: #10b8ff;
+  border-color: #10b8ff; /*light blue*/
   color: #10b8ff
 }
 .modules div:nth-child(2) {
-  border-color: #09eaae;
+  border-color: #09eaae; /*light green*/
   color: #09eaae;
 }
 .modules div:nth-child(3) {
-  border-color: #9d16c7;
+  border-color: #9d16c7; /*purple*/
   color: #9d16c7;
 }
 .modules div:nth-child(1):hover {

@@ -1,5 +1,5 @@
 <template>
-  <div class="container-dashboard">
+  <div class="container dashboard">
     <div class="dash-logo">
       <img src="../assets/logoGray.png" alt="Logo Matiz">
     </div>
@@ -24,15 +24,9 @@ export default {
 </script>
 
 <style scoped>
-.container-dashboard {
-  padding: 3rem 10rem;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  height: 100%;
-  width: 100%;
-  grid-gap: 3rem;
+.container.dashboard {
   justify-items: center;
+  grid-gap: 3rem;
 }
 .dash-logo {
   position: relative;
