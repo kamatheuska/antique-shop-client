@@ -1,7 +1,7 @@
 <template>
   <div class="container dashboard">
     <div class="dash-logo">
-      <img src="../assets/logoGray.png" alt="Logo Matiz">
+      <img src="../assets/logo.png" alt="Logo Matiz">
     </div>
     <div class="welcome user-msg">
       <h1>¡Bienvenid@ <span>{{ user[0] }}</span>! Estás en la app de Matiz. Selecciona una de las opciones para continuar...</h1>
@@ -29,13 +29,14 @@ export default {
   grid-gap: 3rem;
 }
 .dash-logo {
+  align-self: center;
   position: relative;
   grid-column: 1 / span 5;
   grid-row: 1 / span 4;
 }
 .dash-logo img {
   position: relative;
-  max-height: 100%;
+  max-width: 100%;
 }
 .welcome {
   grid-column: 1 / span 5;
@@ -43,6 +44,9 @@ export default {
   letter-spacing: 0.2rem;
   line-height: 2.8rem;
   align-self: center;
+}
+.welcome span {
+  color: #f7a830;
 }
 .shortcuts {
   grid-column: 1 / span 5;

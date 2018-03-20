@@ -1,6 +1,8 @@
  <template>
   <div id="app">
-    <router-view/>
+    <transition name="fade" mode="out-in">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -11,12 +13,19 @@ export default {
 </script>
 
 <style>
+/*#3c3c3b gris oscuro */
+/*#c2dce2  azul claro*/
+/*#f7a830  naranja  */
+/*#dbd3b8 beige */
 body, html {
+
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
-  background: #eee;
+/*  background-image: url("/assets/logo.png");
+  background-size: cover;*/
+  background-color: #3c3c3b;
   font-size: 10px;
 }
 html * {
@@ -28,7 +37,7 @@ html * {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #666;
+  color: #dbd3b8;
   overflow: hidden;
 }
 .box-gray {
@@ -37,7 +46,7 @@ html * {
   padding: 2rem;
   width: 100%;
   background: #fff;
-  box-shadow: 0px 0.4rem 0.8rem 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 0.4rem 0.8rem 0px rgba(0,0,0,0.8);
 }
 .container {
   padding: 3rem 10rem;
@@ -62,5 +71,11 @@ a {
   display: block;
   text-decoration: none;
   color: inherit;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>

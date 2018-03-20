@@ -53,7 +53,7 @@ export default {
   font-size: 1.4rem;
 }
 .news table th {
-  background: #195d81;
+  background: #f7a830;
   color: #fff;
   padding: 0.7rem;
 }
@@ -61,17 +61,18 @@ export default {
   text-align: right;
   font-size: 2rem;
   font-style: italic;
+  color: #3c3c3b;
 }
 .news td {
   padding: 1rem;
 }
 .news table tr:nth-child(odd) {
-  background-color: #10b8ff;
-  color: white;
+  background-color: #dbd3b8;
+  color: #3c3c3b;
 }
 .news table tr:nth-child(even) {
-  background: #09eaae;
-  color: #6d6d6d;
+  background: #c2dce2;
+  color: #3c3c3b;
 }
 
 /*

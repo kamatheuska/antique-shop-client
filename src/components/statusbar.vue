@@ -14,8 +14,8 @@ export default {
   data () {
     return {
       datenow: '',
-      status: 'ACTIVE',
-      isActive: true
+      status: 'INACTIVO',
+      isActive: false
     }
   },
   methods: {
@@ -24,7 +24,7 @@ export default {
     },
     simulateLogin () {
       this.isActive = !this.isActive
-      this.isActive ? this.status = 'ACTIVE' : this.status = 'DISABLED'
+      this.isActive ? this.status = 'ACTIVO' : this.status = 'INACTIVO'
     }
   },
   computed: {
@@ -53,27 +53,21 @@ export default {
   align-items: center;
   justify-items: center;
 }
+.status h1 { color: #3c3c3b }
+.status h1:nth-child(3) { grid-column: 3 / span 2 }
+#status-signal.active   { background: #09eaae }
+#status-signal.disabled { background: #ff8b8b }
 #status-signal {
   height: 2.5rem;
   width: 2.5rem;
   border-radius: 2rem;
 }
-#status-signal.active {
-  background: #09eaae;
-}
-#status-signal.disabled {
-  background: #ff8b8b;
-}
-.status h1:nth-child(3) {
-  grid-column: 3 / span 2;
-}
 .status button {
-  background: #10b8ff;
+  background: #c2dce2;
   color: #fff;
   border: none;
   height: 4.3rem;
   border-radius: 3rem;
-  opacity: 0.4;
   cursor: pointer;
 }
 </style>

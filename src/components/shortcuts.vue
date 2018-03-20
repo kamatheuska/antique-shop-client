@@ -38,26 +38,20 @@ export default {
   align-items: center;
   justify-items: center;
 }
-.shorcuts .btn {
-  cursor: pointer;
-}
-.shortcuts button.btn:nth-child(2) {
-  grid-row: 2;
-}
-.shortcuts button.btn:nth-child(3) {
-  grid-row: 3;
-}
+.shorcuts .btn { cursor: pointer }
+.shortcuts button.btn:nth-child(2) { grid-row: 2 }
+.shortcuts button.btn:nth-child(3) { grid-row: 3 }
 .shortcuts button.btn:nth-child(1):hover {
-  border-color: #10b8ff;
-  color: #10b8ff;
+  border-color: #c2dce2;
+  color: #c2dce2;
 }
 .shortcuts button.btn:nth-child(2):hover {
-  border-color: #09eaae;
-  color: #09eaae;
+  border-color: #f7a830;
+  color: #f7a830;
 }
 .shortcuts button.btn:nth-child(3):hover {
-  border-color: #9d16c7;
-  color: #9d16c7;
+  border-color: #dbd3b8;
+  color: #dbd3b8;
 }
 /* Dropdown Button */
 .dropbtn {

@@ -34,7 +34,8 @@ export default new Router({
         {
           path: '',
           components: {
-            selectProducts: SelectProducts
+            selectProducts: SelectProducts,
+            status: StatusBar
           }
         }
       ]

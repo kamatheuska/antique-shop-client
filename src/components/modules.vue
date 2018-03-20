@@ -44,30 +44,30 @@ export default {
   transition: background-color 0.3s ease;
 }
 .modules div:nth-child(1) {
-  border-color: #10b8ff; /*light blue*/
-  color: #10b8ff
+  border-color: #c2dce2; /*light blue*/
+  color: #c2dce2
 }
 .modules div:nth-child(2) {
-  border-color: #09eaae; /*light green*/
-  color: #09eaae;
+  border-color: #f7a830; /*light green*/
+  color: #f7a830;
 }
 .modules div:nth-child(3) {
-  border-color: #9d16c7; /*purple*/
-  color: #9d16c7;
+  border-color: #dbd3b8; /*purple*/
+  color: #dbd3b8;
 }
 .modules div:nth-child(1):hover {
   border: none;
-  background: #10b8ff;
+  background: #c2dce2;
   color: #fff
 }
 .modules div:nth-child(2):hover {
   border: none;
-  background: #09eaae;
+  background: #f7a830;
   color: #fff;
 }
 .modules div:nth-child(3):hover {
   border: none;
-  background: #9d16c7;
+  background: #dbd3b8;
   color: #fff;
 }
 .modules div p {
