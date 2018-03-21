@@ -40,11 +40,13 @@ html * {
   color: #dbd3b8;
   overflow: hidden;
 }
-.box-gray {
+.box {
   border: 2px solid #eee;
   border-radius: 10px;
   padding: 2rem;
-  width: 100%;
+  width: 100%;  
+}
+.box-gray {
   background: #fff;
   box-shadow: 0px 0.4rem 0.8rem 0px rgba(0,0,0,0.8);
 }

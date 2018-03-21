@@ -1,5 +1,5 @@
 <template>
-  <div class="box-gray modules">
+  <div class="box box-gray modules">
     <div v-for="module in modules">
       <p>{{ module }}</p>
     </div>

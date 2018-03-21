@@ -1,5 +1,5 @@
 <template>
-  <div class="box-gray status">
+  <div class="box box-gray status">
     <div v-bind:class="classActive" id="status-signal"></div>
     <h1>{{ status }} </h1>
     <h1>{{ datenow }}</h1>

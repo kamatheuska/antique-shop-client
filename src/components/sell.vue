@@ -2,8 +2,8 @@
   <div class="container sell">
     <router-view name="selectProducts"></router-view>
    <!--  <router-view name="statusBar"></router-view> -->
-    <div class="box-gray step"></div>
-    <div class="box-gray step"></div>
+    <div class="box box-gray step"></div>
+    <div class="box box-gray step"></div>
     <router-link to="/" class="home-link">HOME</router-link>
   </div>
 </template>
@@ -29,7 +29,7 @@ export default {
   font-weight: 900;
   font-size: 1.2rem;
 }
-.sell .box-gray {
+.sell .box {
   grid-column: span 4;
   grid-row: 1 / -1;
   height: 100%;

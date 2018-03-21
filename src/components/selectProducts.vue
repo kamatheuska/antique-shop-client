@@ -1,5 +1,5 @@
 <template>
-  <div class="box-gray products-selection"
+  <div class="box box-gray products-selection"
     v-bind:class="classActiveStep">
     <div>
       <h1 @click="showProducts()">1 - Escoge los productos: </h1>
@@ -31,7 +31,7 @@
 
           </li>
         </ul>
-        <div class="box-gray table-products">
+        <div class="box box-gray table-products">
           <table>
             <caption>Articulos disponibles:</caption>
             <tr v-if="selection.available.length !== 0">
@@ -52,7 +52,7 @@
             </tr>
           </table>
         </div>
-        <div class="box-gray selected-items">
+        <div class="box box-gray selected-items">
           <table>
             <caption>Articulos seleccionados</caption>
             <tr v-if="selection.items.length !== 0">

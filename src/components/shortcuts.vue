@@ -1,5 +1,5 @@
 <template>
-  <div class="box-gray shortcuts">
+  <div class="box box-gray shortcuts">
     <button
       @click="goToSell()"
       class="btn">VENDER

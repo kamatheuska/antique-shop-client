@@ -1,5 +1,5 @@
 <template>
-  <div class="box-gray news">
+  <div class="box box-gray news">
     <table>
       <caption>Actividad reciente:</caption>
       <tr class="table-headings">
