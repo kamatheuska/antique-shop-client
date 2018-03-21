@@ -61,9 +61,9 @@ html * {
   background: none;
   border: 2px solid #ddd;
   padding: 1rem 2rem;
-  display: block;
+  /*display: block;*/
   width: 70%;
-  height: 5rem;
+  min-height: 4rem;
   color: #6d6d6d;
   cursor: pointer;
 }

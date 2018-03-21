@@ -1,8 +1,15 @@
 <template>
   <div class="box-gray shortcuts">
-    <button @click="goToSell()" class="btn">VENDER</button>
+    <button
+      @click="goToSell()"
+      class="btn">VENDER
+    </button>
     <button class="btn">COMPRAR</button>
     <button class="btn">CONSULTAR</button>
+    <button
+      @click="goToAddProduct()"
+      class="btn">AGREGAR PRODUCTO
+    </button>
     <div class="dropdown">
       <button class="dropbtn">AGREGA OTRA ACCIÓN RÁPIDA:</button>
       <div class="dropdown-content">
@@ -24,6 +31,9 @@ export default {
   methods: {
     goToSell () {
       this.$router.push('/products/sell')
+    },
+    goToAddProduct () {
+      this.$router.push('/products/add')
     }
   }
 }
@@ -33,14 +43,14 @@ export default {
 .shortcuts {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   grid-gap: 1rem;
   align-items: center;
   justify-items: center;
 }
-.shorcuts .btn { cursor: pointer }
 .shortcuts button.btn:nth-child(2) { grid-row: 2 }
 .shortcuts button.btn:nth-child(3) { grid-row: 3 }
+.shortcuts button.btn:nth-child(4) { grid-row: 4 }
 .shortcuts button.btn:nth-child(1):hover {
   border-color: #c2dce2;
   color: #c2dce2;
@@ -52,6 +62,10 @@ export default {
 .shortcuts button.btn:nth-child(3):hover {
   border-color: #dbd3b8;
   color: #dbd3b8;
+}
+.shortcuts button.btn:nth-child(4):hover {
+  border-color: #f7a830;
+  color: #f7a830;
 }
 /* Dropdown Button */
 .dropbtn {

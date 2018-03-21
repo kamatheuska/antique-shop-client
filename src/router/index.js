@@ -7,6 +7,8 @@ import Modules from '@/components/modules'
 import News from '@/components/news'
 import Sell from '@/components/sell'
 import SelectProducts from '@/components/selectProducts'
+import AddProducts from '@/components/addProducts'
+import Products from '@/components/products'
 
 Vue.use(Router)
 
@@ -35,6 +37,19 @@ export default new Router({
           path: '',
           components: {
             selectProducts: SelectProducts,
+            status: StatusBar
+          }
+        }
+      ]
+    },
+    {
+      path: '/products/add',
+      component: Products,
+      children: [
+        {
+          path: '',
+          components: {
+            add: AddProducts,
             status: StatusBar
           }
         }
