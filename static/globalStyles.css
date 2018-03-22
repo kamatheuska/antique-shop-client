@@ -1,0 +1,252 @@
+/*=========================*\
+  #GENERAL NOTES
+
+1. Colors: 
+
+#3C3C3B   DARK GRAY
+#C2DCE2   PALE BLUE
+#FF8B8B   PALE RED
+#09EAAE   PALE GREEN
+#F7A830   ORANGE
+#DBD3B8   BEIGE
+
+\*=========================*/
+
+/*=========================*\
+  #RESET
+\*=========================*/
+
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  background-color: #3c3c3b;
+    font-family: 'montserratextralight';
+  color: #dbd3b8;
+}
+html * {
+  box-sizing: border-box;
+}
+#app {
+  height: 100%;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+/*=========================*\
+  #CONTAINERS
+\*=========================*/
+
+/*.box {
+  border: 2px solid #eee;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 100%;
+}*/
+
+/*=========================*\
+  #GRIDS
+\*=========================*/
+.grid--12x {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  height: 100%;
+  width: 100%;
+  grid-gap: 1rem;
+}
+.grid__row {
+  grid-column: 1 / -1;
+}
+.grid__row--third {
+  grid-column: span 4;
+}
+.grid__col--third {
+  grid-row: span 4;
+}
+.grid__col {
+  grid-row: 1 / -1;
+}
+.grid__col--half {
+  grid-row: 1 / span 6;
+}
+.grid__footer {
+  grid-column-end: -1;
+  grid-row-end: -1;
+}
+/*=========================*\
+  #BUTTONS
+\*=========================*/
+.button {
+  position: relative;
+  background: none;
+  border: 2px solid #ddd;
+  padding: 1rem 2rem;
+  min-height: 4rem;
+  height: 2rem;
+  color: #3C3C3B;
+  cursor: pointer;
+  width: 28rem;
+  border-radius: 4px;
+}
+.button--state-alert {
+  border: 2px solid #DBD3B8;
+  color: #DBD3B8;
+  font-weight: bold;
+  box-shadow: 0px 0.4rem 0.6rem 0px rgba(0,0,0,0.2);
+  transition: background-color 0.4s ease;
+}
+.button--state-alert:hover {
+  border: 2px solid #DBD3B8;
+  color: #3C3C3B;
+  background: #DBD3B8;
+  font-weight: bold;
+}
+.button--state-submit {
+  border: 2px solid #C2DCE2;
+  color: #C2DCE2;
+  font-weight: bold;
+  box-shadow: 0px 0.4rem 0.6rem 0px rgba(0,0,0,0.2);
+  transition: background-color 0.4s ease;
+}
+.button--state-submit:hover {
+  border: 2px solid #C2DCE2;
+  color: #3C3C3B;
+  background: #C2DCE2;
+  font-weight: bold;
+}
+
+/*=========================*\
+  #CONTAINERS AND FRAMES
+\*=========================*/
+.container {
+  height: 100%;
+  padding: 3rem 10rem;
+}
+.container__frame {
+  border: 2px solid #eee;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 100%;
+}
+.container__frame--nav {
+  border: none;
+  background: #6B6B69;
+  box-shadow: 0px 0.4rem 0.8rem 0px rgba(0,0,0,0.8);
+}
+.container--small {
+  width: 50%;
+}
+.box--gray {
+  background: #fff;
+  box-shadow: 0px 0.4rem 0.8rem 0px rgba(0,0,0,0.8);
+  color: #3c3c3b;
+}
+/*-----OLD---*/
+.box-gray {
+  background: #fff;
+  box-shadow: 0px 0.4rem 0.8rem 0px rgba(0,0,0,0.8);
+}
+.box-blue {
+  background: #c2dce2;
+  box-shadow: 0px 0.1rem 0.4rem 0px rgba(0,0,0,0.3);
+}
+
+
+
+
+
+
+
+
+
+/*=========================*\
+  #GRIDS
+\*=========================*/
+
+/*............DASHBOARD............*/
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  height: 100%;
+  width: 100%;
+}
+
+/*............PRODUCTS............*/
+.products-overview {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  height: 100%;
+  grid-gap: 2rem;
+}
+.products-overview .products-add {
+  grid-column: span 6;
+  grid-row: 1 / -2;
+}
+.products-overview .products-db {
+  grid-column: 7 / span 6;
+  grid-row: 1 / -2;
+}
+.products-overview .home-link {
+  grid-column: 1 / span 6;
+  grid-row: 12 / span 1;
+}
+/*=========================*\
+  #ELEMENTS
+\*=========================*/
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+input {
+  font-family: monospace;
+  padding-left: 0.5rem;
+}
+
+/*=========================*\
+  #PSEUDO ELEMENTS
+\*=========================*/
+
+input:invalid+span:after {
+  content: '✖';
+  color: #ff8b8b;
+  padding: 0 0.5rem;
+  font-size: 2rem;
+  vertical-align: middle;
+}
+input:valid+span:after {
+  content: '✓';
+  color: #11950d;
+  padding: 0 0.5rem;
+  font-size: 2rem;
+  vertical-align: middle;
+}
+
+/*=========================*\
+  #VUE TRANSITIONS
+\*=========================*/
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(5rem);
+  opacity: 0;
+}
