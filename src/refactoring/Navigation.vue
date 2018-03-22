@@ -89,9 +89,10 @@ export default {
   background-image:
     linear-gradient(to right, #6B6B69, #3C3C3B 80%);
   border: none;
+  box-shadow: -0.5rem 0.1rem 0.8rem -0.2rem rgba(0,0,0,0.8);
 }
 .Navigation__module {
-  color: #292928;
+  color: #121212;
   font-size: 1.5em;
   list-style-type: none;
 }
@@ -99,7 +100,7 @@ export default {
   color: #C2DCE2;
 }
 .Navigation__link {
-  color: #292928;
+  color: #121212;
   list-style-type: none;
 }
 .Navigation__link:hover {
