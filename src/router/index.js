@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Welcome from '@/refactoring/Welcome'
-import GreetingLogo from '@/refactoring/GreetingLogo'
-import Dashboard from '@/refactoring/Dashboard'
-import Navigation from '@/refactoring/Navigation'
+import Welcome from '@/components/Welcome'
+import GreetingLogo from '@/components/GreetingLogo'
+import Dashboard from '@/components/Dashboard'
+import Navigation from '@/components/Navigation'
 
 Vue.use(Router)
 
