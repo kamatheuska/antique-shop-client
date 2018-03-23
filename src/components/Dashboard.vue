@@ -1,10 +1,8 @@
 <template>
-  <div class="Dashboard container grid--12x">
+  <div class="Dashboard container grid--12x">    
+    <span class="Dashboard__user">{{ user }}</span>
     <router-view class="Dashboard__GreetingLogo"
                   name="GreetingLogo">
-      <div slot="greeting">
-        <h1>¡Bienvenid@ <span class="Dashboard__user">{{ user }}</span>! Estás en la app de Matiz. Selecciona una de las opciones para continuar...</h1>
-      </div>
     </router-view>
 
     <router-view class="Dashboard__Navigation"
@@ -65,6 +63,8 @@ export default {
 .Dashboard__user {
   color: #F7A830;
   font-weight: bold;
+  font-size: 2rem;
+  grid-column: span 3;
 }
 .Dashboard__Navigation {
   grid-column: 1 / span 3;
