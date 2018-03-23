@@ -1,7 +1,10 @@
 <template>
   <nav class="Navigation container__frame grid--12x6 ">
-    <ul  class="grid__row grid__col--half " v-for="(module, i) in modules"
-          :key="module.id">
+    <ul class="Navigation__list
+               grid__row
+               grid__col--half"
+        v-for="(module, i) in modules"
+         :key="module.id">
       <transition name="slide-fade">
       <li class="Navigation__module
                  slide-fade-enter-active"
@@ -42,7 +45,7 @@ export default {
             {
               id: 200,
               name: 'COMPRAR',
-              route: '/movements/sell'
+              route: '/movements/buy'
             }
           ]
         },
@@ -53,8 +56,25 @@ export default {
           actions: [
             {
               id: 3,
+              name: 'AÑADIR ITEM',
+              route: '/data/add'
+            },
+            {
+              id: 3,
               name: 'CONSULTAR',
               route: '/data/consult'
+            }
+          ]
+        },
+        {
+          id: 1002,
+          name: 'INICIO',
+          selected: false,
+          actions: [
+            {
+              id: 3,
+              name: 'INICIO',
+              route: '/'
             }
           ]
         }
@@ -62,9 +82,8 @@ export default {
     }
   },
   methods: {
-    goToRoute ({route}) {
-      console.log(route)
-      // this.$router.push(route)
+    goToRoute ({ route }) {
+      this.$router.push(route)
     },
     showChildren (index) {
       this.modules[index].selected = !this.modules[index].selected
@@ -73,23 +92,27 @@ export default {
         .filter(module => module.selected === true)
         .map(module => module.id)
         .forEach(id => {
-          console.log(id);
+          console.log(id)
           this.module[id].selected = !this.module[id].selected
         })
-    },
+    }
   }
 }
 </script>
 
 <style>
 .Navigation {
-  font-family: 'montserratsemibold';
+  font-family: 'montserratmedium';
   display: grid;
-  padding: 3rem;
+  padding: 3rem 2rem;
   background-image:
-    linear-gradient(to right, #6B6B69, #3C3C3B 80%);
+    linear-gradient(to right, #F1EFE5, #5F5F5E 76%, #3C3C3B 95%);
   border: none;
   box-shadow: -0.5rem 0.1rem 0.8rem -0.2rem rgba(0,0,0,0.8);
+}
+.Navigation__list {
+  padding-left: 1rem;
+  border-left: 2px solid #4f4f4f;
 }
 .Navigation__module {
   color: #121212;

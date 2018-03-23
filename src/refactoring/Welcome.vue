@@ -1,7 +1,8 @@
 <template>
   <div class="Welcome container grid--12x">
     <div class="grid__row grid__col--half">
-      <router-view name="GreetingLogo"></router-view>
+      <router-view class="Welcome__GreetingLogo"
+                    name="GreetingLogo"></router-view>
     </div>
     <input placeholder="Escribe tu nombre aqui"
                  class="Welcome__input"
@@ -40,9 +41,9 @@ export default {
     ...mapActions({
       login: 'login'
     }),
-    loginUser ()  {
+    loginUser () {
       this.login().then(() => {
-        this.$router.push('dash')        
+        this.$router.push('dash')
       }).catch(err => err)
     },
     updateData (e) {

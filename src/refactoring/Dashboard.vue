@@ -2,24 +2,23 @@
   <div class="Dashboard container grid--12x">
     <router-view class="Dashboard__GreetingLogo"
                   name="GreetingLogo">
-      <img slot="logo"
-          class="Dashboard__img" 
-            src="../assets/logo.png"
-            alt="Logo Matiz">
       <div slot="greeting">
         <h1>¡Bienvenid@ <span class="Dashboard__user">{{ user }}</span>! Estás en la app de Matiz. Selecciona una de las opciones para continuar...</h1>
       </div>
     </router-view>
+
     <router-view class="Dashboard__Navigation"
-                  name="Navigation"></router-view>
+                  name="Navigation">
+    </router-view>
+
     <div class="Dashboard__container">
       <div v-bind:class="gridLocation(i)"
                   class="Dashboard__module"
-           v-for="(module, i) in modules"
-            :key="module.id">
-        <span
-                     class="Dashboard__module--name">
-                     {{ module.name }}</span>
+                  v-for="(module, i) in modules"
+                   :key="module.id">
+        <span class="Dashboard__module--name">
+          {{ module.name }}
+        </span>
       </div>
     </div>
   </div>
@@ -32,11 +31,11 @@ export default {
   data () {
     return {
       modules: [
-        { id: 'mod1', alias: 'data', name: 'Base de Datos'},
-        { id: 'mod2', alias: 'movs', name: 'Movimientos'},
-        { id: 'mod3', alias: 'admin', name: 'Admin'},
-        { id: 'mod4', alias: 'credits', name: 'Créditos'}
-      ],
+        { id: 'mod1', alias: 'data', name: 'Base de Datos' },
+        { id: 'mod2', alias: 'movs', name: 'Movimientos' },
+        { id: 'mod3', alias: 'admin', name: 'Admin' },
+        { id: 'mod4', alias: 'credits', name: 'Créditos' }
+      ]
     }
   },
   computed: {
@@ -44,14 +43,14 @@ export default {
       user: state => state.credentials.user
     })
   },
-  methods: {    
+  methods: {
     gridLocation (index) {
       let alias = this.modules[index].alias
       return {
         'Dashboard__module--data': alias === 'data',
         'Dashboard__module--movs': alias === 'movs',
         'Dashboard__module--admin': alias === 'admin',
-        'Dashboard__module--credits': alias === 'credits',
+        'Dashboard__module--credits': alias === 'credits'
       }
     }
   }
@@ -59,9 +58,6 @@ export default {
 </script>
 
 <style >
-.Dashboard__img {
-  max-width: 100%;
-}
 .Dashboard__GreetingLogo {
   grid-column: 1 / span 6;
   grid-row: 2 / span 5;
@@ -71,8 +67,8 @@ export default {
   font-weight: bold;
 }
 .Dashboard__Navigation {
-  grid-column: 1 / span 2;
-  grid-row: 7 / -1;  
+  grid-column: 1 / span 3;
+  grid-row: 7 / -1;
 }
 .Dashboard__container {
   display: grid;
@@ -92,7 +88,7 @@ export default {
   width: 15rem;
   background: rgba(219, 211, 184, 0.8);
   box-shadow: 0px 0.4rem 0.6rem 0.4rem rgba(0,0,0,0.2);
-  transition: background-color 0.8s ease; 
+  transition: background-color 0.8s ease;
 }
 .Dashboard__module--name {
   font-family: 'montserratmedium', Arial, sans-serif;
@@ -119,8 +115,8 @@ export default {
   grid-column: 3;
   grid-row: 3;
 }
-.Dashboard__module--data:hover { background: #C2DCE2 }
-.Dashboard__module--movs:hover { background: #09EAAE }
-.Dashboard__module--admin:hover { background: #FF8B8B }
-.Dashboard__module--credits:hover { background: #F7A830 }
+.Dashboard__module--data:hover    { background: #C2DCE2 }
+.Dashboard__module--movs:hover    { background: #BBF9E8 }
+.Dashboard__module--admin:hover   { background: #CB8BEB }
+.Dashboard__module--credits:hover { background: #FCDFB3 }
 </style>
