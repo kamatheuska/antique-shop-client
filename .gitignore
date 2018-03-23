@@ -15,5 +15,5 @@ selenium-debug.log
 *.ntvs*
 *.njsproj
 *.sln
-
+*.sublime*
 src/assets/logoM.png
