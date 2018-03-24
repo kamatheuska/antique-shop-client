@@ -35,21 +35,21 @@ export default new Router({
         {
           path: '',
           components: {
-            GreetingLogo: GreetingLogo,
-            Navigation: Navigation
+            logo: GreetingLogo,
+            nav: Navigation
           }
         }
       ]
     },
     {
-      path: '/data/add',
+      path: '/data',
       component: Data,
       children: [
         {
-          path: '',
+          path: 'add',
           components: {
-            AddItem: AddItem,
-            DBPreview: DBPreview
+            add: AddItem,
+            preview: DBPreview
           }
         }
       ]

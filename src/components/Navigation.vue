@@ -1,22 +1,26 @@
 <template>
-  <nav class="Navigation container__frame grid--12x6 ">
+  <nav class="Navigation container__frame grid">
+    <h1 class="Navigation__title">
+      <slot></slot>
+    </h1>
     <ul class="Navigation__list
                grid__row
                grid__col--half"
-        v-for="(module, i) in modules"
-         :key="module.id">
+        v-for="(parent, index) in navmenu"
+         :key="`parent-${index}`">
       <transition name="slide-fade">
       <li class="Navigation__module
                  slide-fade-enter-active"
-         @click="showChildren(i)">
-           {{ module.name }}
+         @click="showMenu({ name: 'navmenu', parent })">
+           {{ parent.name }}
         <transition name="slide-fade">
-          <ul v-if="module.selected">
+          <ul v-if="navmenu[index].sel">
             <li class="Navigation__actions"
-                v-for="action in module.actions"
-                 :key="action.id">
+                v-for="(child, i) in navmenu[index].children"
+                 :key="`child-${i}`">
               <span class="Navigation__link slide-fade-enter-active"
-                @click="goToRoute(action)">{{ action.name }}
+                   @click="goToRoute(navmenu[index].routes[i])">
+                   {{ child }}
               </span>
             </li>
           </ul>
@@ -28,73 +32,28 @@
 </template>
 
 <script>
+import { mapState, mapActions, mapMutations } from 'vuex'
+
 export default {
+  name: 'NavBar',
   data () {
     return {
-      modules: [
-        {
-          id: 1000,
-          name: 'MOVIMIENTOS',
-          selected: false,
-          actions: [
-            {
-              id: 100,
-              name: 'VENDER',
-              route: '/movements/sell'
-            },
-            {
-              id: 200,
-              name: 'COMPRAR',
-              route: '/movements/buy'
-            }
-          ]
-        },
-        {
-          id: 1001,
-          name: 'DATOS',
-          selected: false,
-          actions: [
-            {
-              id: 3,
-              name: 'AÑADIR ITEM',
-              route: '/data/add'
-            },
-            {
-              id: 3,
-              name: 'CONSULTAR',
-              route: '/data/consult'
-            }
-          ]
-        },
-        {
-          id: 1002,
-          name: 'INICIO',
-          selected: false,
-          actions: [
-            {
-              id: 3,
-              name: 'INICIO',
-              route: '/'
-            }
-          ]
-        }
-      ]
     }
   },
+  computed: {
+    ...mapState([ 'navmenu' ])
+  },
   methods: {
-    goToRoute ({ route }) {
-      this.$router.push(route)
+    ...mapActions([ 'toggleParentChild' ]),
+    showMenu (payload) {
+      if (payload.parent.name == 'INICIO') {
+        this.goToRoute('/')
+      }
+
+      this.toggleParentChild(payload)
     },
-    showChildren (index) {
-      this.modules[index].selected = !this.modules[index].selected
-      this.modules
-        .filter(module => module.id !== index)
-        .filter(module => module.selected === true)
-        .map(module => module.id)
-        .forEach(id => {
-          console.log(id)
-          this.module[id].selected = !this.module[id].selected
-        })
+    goToRoute (route) {
+      this.$router.push(route)
     }
   }
 }
@@ -102,20 +61,19 @@ export default {
 
 <style>
 .Navigation {
-  font-family: 'montserratmedium';
-  display: grid;
-  padding: 3rem 2rem;
-  background-image:
-    linear-gradient(to right, #F1EFE5, #5F5F5E 76%, #3C3C3B 95%);
+  font-family: 'montserratmedium', Arial, sans-serif;
+  padding: 2rem 2rem;
+  background-color: none;
   border: none;
-  box-shadow: -0.5rem 0.1rem 0.8rem -0.2rem rgba(0,0,0,0.8);
+}
+.Navigation__title {
+  font-size: 2.5rem;
 }
 .Navigation__list {
   padding-left: 1rem;
-  border-left: 2px solid #4f4f4f;
+  border-left: 2px solid #6D6D6D;
 }
 .Navigation__module {
-  color: #121212;
   font-size: 1.5em;
   list-style-type: none;
 }
@@ -123,7 +81,7 @@ export default {
   color: #C2DCE2;
 }
 .Navigation__link {
-  color: #121212;
+  color: #6D6D6D;
   list-style-type: none;
 }
 .Navigation__link:hover {

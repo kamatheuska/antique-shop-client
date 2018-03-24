@@ -5,6 +5,10 @@ import App from './App'
 import router from './router'
 import { store } from './store'
 
+import Navigation from './components/Navigation'
+
+Vue.component('nav-bar', Navigation)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

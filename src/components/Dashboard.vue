@@ -1,13 +1,11 @@
 <template>
-  <div class="Dashboard container grid--12x">    
+  <div class="Dashboard container grid grid--x12">    
     <span class="Dashboard__user">{{ user }}</span>
     <router-view class="Dashboard__GreetingLogo"
-                  name="GreetingLogo">
+                  name="logo">
     </router-view>
 
-    <router-view class="Dashboard__Navigation"
-                  name="Navigation">
-    </router-view>
+    <nav-bar class="Dashboard__Navigation"></nav-bar>
 
     <div class="Dashboard__container">
       <div v-bind:class="gridLocation(i)"

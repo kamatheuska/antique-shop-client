@@ -1,5 +1,5 @@
 <template>
-  <div class="DBPreview box__big box__big--beige grid__col">
+  <div class="DBPreview box__big grid__col">
     <h1>testing DB</h1>
   </div>
 </template>
@@ -16,6 +16,7 @@ export default {
 
 <style>
 .DBPreview {
+  background: #fff;
   color: black;
   grid-column: 7 / span 6;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="Welcome container grid--12x">
+  <div class="Welcome container grid grid--x12">
     <div class="grid__row grid__col--half">
       <router-view class="Welcome__GreetingLogo"
                     name="GreetingLogo"></router-view>
